@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => {
     const envDir = path.resolve(__dirname, "..");
     const env = loadEnv(mode, envDir, "");
     return {
+        server: {
+          watch: { usePolling: true }
+        },
         plugins: [
             react(),
             viteCompression({
